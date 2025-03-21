@@ -45,7 +45,8 @@ function processFile(filepath) {
             handleError(error.toString());
         } else {
             console.log("File Content Read Asynchronously:");
-            process.stdout.write(content);
+            var fileContent = content.toString().toUpperCase();
+            process.stdout.write(fileContent);
         }
     });
 }
