@@ -9,8 +9,8 @@
 - Input from stdin
 - Environment Variables
 
-### Example output for [io.js](./io.js)
-`
+### Example for [io.js](./io.js)
+```
 ➜  revisit-nodejs git:(main) ✗ cat hello_world.txt | environment="Production" BASE_PATH="./" ./io.js --in --file="hello_world.txt"
 **************** ARGUMENTS **********************
 arguments { _: [], help: false, in: true, file: 'hello_world.txt' }
@@ -30,4 +30,4 @@ Oops
 ************************************
 File Content Read Asynchronously:
 HELLO WORLD!
-`
+```
