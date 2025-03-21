@@ -10,6 +10,7 @@ var args = require("minimist")(process.argv.slice(2), {
 var path = require("path");
 var fs = require("fs");
 var getStdin = require("get-stdin");
+var {Transform} = require("stream");
 
 console.log("**************** ARGUMENTS **********************");
 console.log("arguments", args);
@@ -62,6 +63,15 @@ console.log("************************************");
 
 function processFile(inStream) {
   var outStream = inStream;
+  
+  var upperStream = new Transform({
+    transform(chunk, enc, cb) {
+      this.push(chunk.toString().toUpperCase());
+      cb();
+    }
+  })
+  outStream = outStream.pipe(upperStream);
+
   var targetStream = process.stdout;
   outStream.pipe(targetStream);
 }

@@ -12,6 +12,7 @@
 
 ## Streams
 - File Handling with streams
+- Transform Stream
 
 ### Example for [io.js](./io.js)
 ```
