@@ -14,6 +14,7 @@
 - File Handling with streams
 - Transform Stream
 - Output Stream to a file
+- gzip Compress and Decompress using zlib
 
 ### Example for [io.js](./io.js)
 ```
