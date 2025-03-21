@@ -104,8 +104,8 @@ function handleError(errorMessage, showHelp) {
   }
 }
 function printHelp() {
-  console.log("io usage:");
-  console.log("./io.js --file={FILENAME} --help");
+  console.log("streams usage:");
+  console.log("./streams.js --file={FILENAME} --help");
   console.log("");
   console.log("--help                prints this help");
   console.log("--file={FILENAME}     process the file");
