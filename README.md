@@ -15,3 +15,4 @@
 - Transform Stream
 - Output Stream to a file
 - gzip Compress and Decompress using zlib
+- Determining End of Stream (Event Listener)

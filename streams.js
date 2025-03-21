@@ -32,7 +32,9 @@ if (args.help) {
   console.log("processing file:", args.file);
   var filepath = path.join(BASE_PATH, args.file);
   var fileStream = fs.createReadStream(filepath);
-  processFile(fileStream);
+  processFile(fileStream)
+    .then(() => console.log("File Read Successfully"))
+    .catch(() => console.log("Error Reading File"));
 } else if (args._.includes("-") || args.in) {
   console.log("**************** ARGUMENTS **********************");
   console.log("arguments", args);
@@ -46,12 +48,14 @@ if (args.help) {
   console.log("");
 
   console.log("Input from Stdin:");
-  processFile(process.stdin);
+  processFile(process.stdin)
+    .then(() => console.log("File Read Successfully"))
+    .catch(() => console.log("Error Reading File"));
 } else {
   handleError("Incorrect usage", true);
 }
 
-function processFile(inStream) {
+async function processFile(inStream) {
   var outStream = inStream;
 
   if (args.decompress) {
@@ -81,6 +85,13 @@ function processFile(inStream) {
   }
 
   outStream.pipe(targetStream);
+  await streamEndHandler(outStream);
+}
+
+function streamEndHandler(stream) {
+  return new Promise((res) => {
+    stream.on("end", res);
+  });
 }
 
 function handleError(errorMessage, showHelp) {
