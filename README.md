@@ -1,4 +1,5 @@
 # Revisit Nodejs
 
-- Console log and process stdout
-- Console Error and process stderr
+- Console log/process stdout
+- Console Error/process stderr
+- Node Shebang to make it executable
