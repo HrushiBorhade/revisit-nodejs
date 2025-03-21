@@ -4,7 +4,7 @@
 
 // console.log(process.argv.slice(2));
 var args = require("minimist")(process.argv.slice(2), {
-  boolean: ["help", "in"],
+  boolean: ["help", "in", "out"],
   string: ["file"],
 });
 var path = require("path");
@@ -20,8 +20,10 @@ console.log("");
 console.log("************* ENVIRONMENT VARIABLES *************");
 console.log("Environment", process.env.environment);
 console.log("Base Path", process.env.BASE_PATH);
-var BASE_PATH = path.resolve(process.env.BASE_PATH || __dirname);
 console.log("*************************************************");
+
+var BASE_PATH = path.resolve(process.env.BASE_PATH || __dirname);
+var OUTPATH = path.join(BASE_PATH, "out.txt");
 
 // processing arguments
 if (args.file) {
@@ -72,7 +74,13 @@ function processFile(inStream) {
   })
   outStream = outStream.pipe(upperStream);
 
-  var targetStream = process.stdout;
+  var targetStream;
+  if(args.out){
+    targetStream = process.stdout;
+  }else{
+    targetStream = fs.createWriteStream(OUTPATH);
+  }
+
   outStream.pipe(targetStream);
 }
 
@@ -89,5 +97,7 @@ function printHelp() {
   console.log("");
   console.log("--help                prints this help");
   console.log("--file={FILENAME}     process the file");
+  console.log("--in                  process stdin");
+  console.log("--out                 print to stdout");
   console.log("");
 }

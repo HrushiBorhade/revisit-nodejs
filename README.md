@@ -13,6 +13,7 @@
 ## Streams
 - File Handling with streams
 - Transform Stream
+- Output Stream to a file
 
 ### Example for [io.js](./io.js)
 ```
