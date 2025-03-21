@@ -6,3 +6,4 @@
 - Command Line arguments
 - Argument parsing with minimist
 - Read file(Sync,Async)
+- input from stdin
