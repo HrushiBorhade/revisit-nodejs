@@ -1,5 +1,6 @@
 # Revisit Nodejs
 
+## Command Line Script
 - Console log/process stdout
 - Console Error/process stderr
 - Node Shebang to make it executable
@@ -8,6 +9,9 @@
 - Read file(Sync,Async)
 - Input from stdin
 - Environment Variables
+
+## Streams
+- File Handling with streams
 
 ### Example for [io.js](./io.js)
 ```
