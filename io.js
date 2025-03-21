@@ -11,10 +11,21 @@ var path = require("path");
 var fs = require("fs");
 var getStdin = require("get-stdin");
 
+console.log("**************** ARGUMENTS **********************");
+console.log("arguments", args);
+console.log("*************************************************");
+console.log("")
+
+console.log("************* ENVIRONMENT VARIABLES *************");
+console.log("Environment", process.env.environment);
+console.log("Base Path", process.env.BASE_PATH);
+var BASE_PATH = path.resolve(process.env.BASE_PATH || __dirname);
+console.log("*************************************************");
+
 // processing arguments
 if (args.file) {
   console.log("processing file:", args.file);
-  var filepath = path.resolve(args.file);
+  var filepath = path.join(BASE_PATH, args.file);
   //    var content = fs.readFileSync(filepath);
   fs.readFile(filepath, (error, content) => {
     if (error) {
