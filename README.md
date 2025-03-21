@@ -5,3 +5,4 @@
 - Node Shebang to make it executable
 - Command Line arguments
 - Argument parsing with minimist
+- Read file(Sync,Async)
