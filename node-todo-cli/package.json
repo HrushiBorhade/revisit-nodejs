@@ -6,8 +6,9 @@
     "notes": "dist/index.js"
   },
   "scripts": {
-    "test": "jest",
-    "build": "tsc -b"
+    "build": "tsc -b",
+    "build:react": "cd client && npm run build",
+    "start:web": "npm run build && npm run build:react && node dist/index.js web"
   },
   "keywords": [],
   "author": "",

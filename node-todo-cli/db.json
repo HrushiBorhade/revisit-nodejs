@@ -7,6 +7,13 @@
       ],
       "content": "create new note",
       "id": 1743137193336
+    },
+    {
+      "tags": [
+        "urgent"
+      ],
+      "content": "improve the web app style",
+      "id": 1743148262585
     }
   ]
 }
