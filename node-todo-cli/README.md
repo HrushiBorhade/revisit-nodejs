@@ -1,6 +1,16 @@
-`npm run build`
 
-`npm link`
+```
+➜  node-todo-cli git:(main) ✗ npm run build
+```
+
+```
+➜  node-todo-cli git:(main) ✗ npm run build:react
+```
+
+
+```
+➜  node-todo-cli git:(main) ✗ npm link
+```
 
 ```
 ➜  node-todo-cli git:(main) ✗ notes --help
@@ -18,4 +28,8 @@ Options:
       --help     Show help                           [boolean]
       --version  Show version number                 [boolean]
   -t, --tags     tags to add to the note              [string]
+```
+
+```
+➜  node-todo-cli git:(main) ✗ notes web 3000
 ```
